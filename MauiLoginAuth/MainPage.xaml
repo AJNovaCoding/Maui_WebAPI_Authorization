@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiLoginAuth.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+     Padding="30,0"
+     Spacing="25">
+            <Label
+         Text="Arnetta Jones - Basic Authentication"
+         Style="{StaticResource Headline}"
+         SemanticProperties.HeadingLevel="Level1" />
+            <Label
+                Text="Week 4 Performance Assessment"/>
+            <Entry
+         x:Name="txtUserId"
+         Placeholder="User ID"/>
+            <Entry
+         x:Name="txtPassword"
+         Placeholder="Password"/>
+
+            <HorizontalStackLayout Spacing="10">
+                <Button
+         Text="Login"
+         Clicked="OnLoginClicked"/>
+                <Button
+                Text="Cancel"
+                Clicked="OnCancelClicked"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
