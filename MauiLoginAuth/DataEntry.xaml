@@ -31,7 +31,20 @@
             Text="Cancel"
             Clicked="OnCancelClicked"/>
         <Label
-            Text="Stored Items"/>
+            Text="Stored Items"
+            FontAttributes="Bold"/>
+        <CollectionView
+            x:Name="StoredItemsList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Padding="5">
+                        <Label Text="{Binding ItemId}" FontAttributes="Bold"/>
+                        <Label Text="{Binding ItemName}"/>
+                        <Label Text="{Binding ItemDescription}"/>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
     </VerticalStackLayout>
 </ContentPage>

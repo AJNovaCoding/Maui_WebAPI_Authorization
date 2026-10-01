@@ -19,7 +19,7 @@ namespace WebAPIAuth.Controllers
                 var authHeader = context.HttpContext.Request.Headers.Authorization.ToString();
                 var authHeaderParts = authHeader.Split(' ');
 
-                //the value should be in the format "Basic <base64-encoded-credentials>"
+                
                 if (authHeaderParts.Length != 2 || authHeaderParts[0] != "Basic")
                 {
                     //if not, return unauthorized
@@ -30,8 +30,6 @@ namespace WebAPIAuth.Controllers
                 //decode the base64-encoded credentials
                 var credentials = System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(authHeaderParts[1])).Split(':');
 
-                Console.WriteLine("Username recieved: " + credentials[0]);
-                Console.WriteLine("Password recieved: " + credentials[1]);
 
                 //check if the username and password are correct; make username case-insensitive
                 if (credentials.Length != 2 || !credentials[0].Equals("Jones01", StringComparison.OrdinalIgnoreCase) || credentials[1] != "Password1")
@@ -42,7 +40,7 @@ namespace WebAPIAuth.Controllers
 
                 else
                 {
-                    //if the username and password are correct, allow the request to proceed
+                    //if the username and password are correct, allow the request
                     base.OnActionExecuting(context);
                 }
             }

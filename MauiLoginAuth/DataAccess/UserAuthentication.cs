@@ -10,7 +10,7 @@ namespace MauiLoginAuth.DataAccess
             using (var client = new HttpClient())
             {
                 //Set the base address of the API
-                client.BaseAddress = new Uri("http://localhost:33426//");
+                client.BaseAddress = new Uri("http://localhost:33426/");
 
                 //Create the authentication header value
                 var authToken = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{username}:{password}"));
